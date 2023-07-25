@@ -37,6 +37,10 @@ const BOLMAGNETOMETER = 'BolMagnetometer'
 const BOLUI = 'BolUI'
 const BOLLED = 'BolLed'
 
+const TIPOPSWITCH = 'TipopSwitch'
+const TIPOPPRESSURE = 'TipopPressure'
+const TIPOPJOYSTICK = 'TipopJoystick'
+
 const CONNECTED = 'connected'
 const DISCONNECTED = 'disconnected'
 const ERROR = 'error'
@@ -132,7 +136,26 @@ class Nano33BLE extends EventEmitter {
 				properties: ['BLERead', 'BLEWrite'],
 				structure: ['Uint16', 'Uint16', 'Uint16'],
 				data: { br: [], bg: [], bb: [] }
-			}
+			},
+
+			[TIPOPSWITCH]: {
+				uuid: 'd91cb6ee-5001-11ea-87d0-0242ac130003',
+				properties: ['BLERead'],
+				structure: ['Uint8'],
+				data: { sw: [] }
+			},
+			[TIPOPPRESSURE]: {
+				uuid: 'd91cb6ee-5002-11ea-87d0-0242ac130003',
+				properties: ['BLERead'],
+				structure: ['Int16'],
+				data: { pr: [] }
+			},
+			[TIPOPJOYSTICK]: {
+				uuid: 'd91cb6ee-5003-11ea-87d0-0242ac130003',
+				properties: ['BLERead'],
+				structure: ['Int16', 'Int16', 'Int16'],
+				data: { x: [], y: [], bt: [] }
+			},
 		}
 
 		this.sensors = Object.keys(this.characteristics)
@@ -325,6 +348,18 @@ class Nano33BLE extends EventEmitter {
 
 	static get BOLUI() {
 		return BOLUI
+	}
+
+	static get TIPOPSWITCH() {
+		return TIPOPSWITCH
+	}
+
+	static get TIPOPPRESSURE() {
+		return TIPOPPRESSURE
+	}
+
+	static get TIPOPJOYSTICK() {
+		return TIPOPJOYSTICK
 	}
 
 	static get CONNECTED() {
