@@ -702,14 +702,16 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 1350.0, 180.0, 203.0, 22.0 ],
+					"patching_rect" : [ 1350.0, 180.0, 173.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
-					"text" : "node.script n4m_BOL_FW.js"
+					"text" : "node.script n4m_TIPOP_FW.js"
 				}
 
 			}
@@ -729,7 +731,7 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 1639.0, 464.0, 400.0, 220.0 ],
+					"patching_rect" : [ 1504.0, 402.0, 400.0, 220.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -8172,6 +8174,13 @@
 			}
 , 			{
 				"name" : "n4m_COR_FW.js",
+				"bootpath" : "~/Documents/OVAOM_GIT/maxBLEtester",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "n4m_TIPOP_FW.js",
 				"bootpath" : "~/Documents/OVAOM_GIT/maxBLEtester",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
