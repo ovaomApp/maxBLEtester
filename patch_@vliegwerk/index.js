@@ -140,19 +140,19 @@ class Nano33BLE extends EventEmitter {
 
 			[TIPOPSWITCH]: {
 				uuid: 'd91cb6ee-5001-11ea-87d0-0242ac130003',
-				properties: ['BLERead'],
+				properties: ['BLENotify'],
 				structure: ['Uint8'],
 				data: { sw: [] }
 			},
 			[TIPOPPRESSURE]: {
 				uuid: 'd91cb6ee-5002-11ea-87d0-0242ac130003',
-				properties: ['BLERead'],
+				properties: ['BLENotify'],
 				structure: ['Int16'],
 				data: { pr: [] }
 			},
 			[TIPOPJOYSTICK]: {
 				uuid: 'd91cb6ee-5003-11ea-87d0-0242ac130003',
-				properties: ['BLERead'],
+				properties: ['BLENotify'],
 				structure: ['Int16', 'Int16', 'Int16'],
 				data: { x: [], y: [], bt: [] }
 			},
