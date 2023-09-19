@@ -41,6 +41,8 @@ const TIPOPSWITCH = 'TipopSwitch'
 const TIPOPPRESSURE = 'TipopPressure'
 const TIPOPJOYSTICK = 'TipopJoystick'
 
+const DICE = 'Dice'
+
 const CONNECTED = 'connected'
 const DISCONNECTED = 'disconnected'
 const ERROR = 'error'
@@ -155,6 +157,12 @@ class Nano33BLE extends EventEmitter {
 				properties: ['BLENotify'],
 				structure: ['Int16', 'Int16', 'Int16'],
 				data: { x: [], y: [], bt: [] }
+			},
+			[DICE]: {
+				uuid: 'd91cb6ee-6000-11ea-87d0-0242ac130003',
+				properties: ['BLENotify'],
+				structure: ['Int8'],
+				data: { d: []}
 			},
 		}
 
@@ -360,6 +368,10 @@ class Nano33BLE extends EventEmitter {
 
 	static get TIPOPJOYSTICK() {
 		return TIPOPJOYSTICK
+	}
+
+	static get DICE() {
+		return DICE
 	}
 
 	static get CONNECTED() {
