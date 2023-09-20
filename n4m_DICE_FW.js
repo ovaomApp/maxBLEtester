@@ -2,7 +2,8 @@ const maxApi = require('max-api');
 const Nano33BLE = require('@vliegwerk/arduino-nano-33-ble')
 const nano33ble = new Nano33BLE({
     enable: [
-    'Dice'
+    'Dice',
+    'DiceAccelerometer'
     ],
 	mean: true,
 	stddev: true
@@ -22,6 +23,9 @@ nano33ble.on('connected', id => {
     maxApi.post(`Connected to ${id}`)
 
     nano33ble.on('Dice', data => {
+        maxApi.outlet(data);
+    });
+    nano33ble.on('DiceAccelerometer', data => {
         maxApi.outlet(data);
     });
 });

@@ -42,6 +42,7 @@ const TIPOPPRESSURE = 'TipopPressure'
 const TIPOPJOYSTICK = 'TipopJoystick'
 
 const DICE = 'Dice'
+const DICEACCELEROMETER = 'DiceAccelerometer'
 
 const CONNECTED = 'connected'
 const DISCONNECTED = 'disconnected'
@@ -163,6 +164,12 @@ class Nano33BLE extends EventEmitter {
 				properties: ['BLENotify'],
 				structure: ['Int8'],
 				data: { d: []}
+			},
+			[DICEACCELEROMETER]: {
+				uuid: 'd91cb6ee-6001-11ea-87d0-0242ac130003',
+				properties: ['BLENotify'],
+				structure: ['Int16', 'Int16', 'Int16'],
+				data: { dax: [], day: [], daz: [] }
 			},
 		}
 
@@ -371,6 +378,10 @@ class Nano33BLE extends EventEmitter {
 	}
 
 	static get DICE() {
+		return DICE
+	}
+
+	static get DICEACCELEROMETER() {
 		return DICE
 	}
 
