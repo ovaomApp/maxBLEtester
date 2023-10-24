@@ -44,6 +44,10 @@ const TIPOPJOYSTICK = 'TipopJoystick'
 const DICE = 'Dice'
 const DICEACCELEROMETER = 'DiceAccelerometer'
 
+const NEWTIPOPSWITCH = 'NewTipopSwitch'
+const NEWTIPOPPRESSURE = 'NewTipopPressure'
+const NEWTIPOPJOYSTICK = 'NewTipopJoystick'
+
 const CONNECTED = 'connected'
 const DISCONNECTED = 'disconnected'
 const ERROR = 'error'
@@ -171,6 +175,24 @@ class Nano33BLE extends EventEmitter {
 				structure: ['Int16', 'Int16', 'Int16'],
 				data: { dax: [], day: [], daz: [] }
 			},
+			[NEWTIPOPSWITCH]: {
+				uuid: 'd91cb6ee-7000-11ea-87d0-0242ac130003',
+				properties: ['BLENotify'],
+				structure: ['Uint8'],
+				data: { sw: [] }
+			},
+			[NEWTIPOPJOYSTICK]: {
+				uuid: 'd91cb6ee-7001-11ea-87d0-0242ac130003',
+				properties: ['BLENotify'],
+				structure: ['Uint16', 'Uint16', 'Uint16'],
+				data: { x: [], y: [], bt: [] }
+			},
+			[NEWTIPOPPRESSURE]: {
+				uuid: 'd91cb6ee-7002-11ea-87d0-0242ac130003',
+				properties: ['BLENotify'],
+				structure: ['Int16'],
+				data: { pr: [] }
+			}
 		}
 
 		this.sensors = Object.keys(this.characteristics)
@@ -395,6 +417,18 @@ class Nano33BLE extends EventEmitter {
 
 	static get ERROR() {
 		return ERROR
+	}
+
+	static get NEWTIPOPSWITCH() {
+		return NEWTIPOPSWITCH
+	}
+
+	static get NEWTIPOPPRESSURE() {
+		return NEWTIPOPPRESSURE
+	}
+
+	static get NEWTIPOPJOYSTICK() {
+		return NEWTIPOPJOYSTICK
 	}
 }
 
